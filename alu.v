@@ -27,12 +27,12 @@ module alu(
 	// 1001 00		A & B								AND
 	// 1001 01		A | B								OR
 	// 1001 10		A ^ B								XOR
-	//	1001 11		~(A | B)							NOR
+	// 1001 11		~(A | B)							NOR
 	//
 	//	101 XX0		signed(A) < signed(B)		Set-Less-Than signed
 	//	101 XX1		A < B								Set-Less-Than unsigned
 
-	// 111 000		A									BLTZ
+	//  111 000		A									BLTZ
 	//	111 001		A									BGEZ
 	//	111 010		A									J/AL
 	//	111 011		A									JR/AL

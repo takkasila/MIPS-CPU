@@ -1,7 +1,7 @@
-module mux#(parameter W = 32)( input select_in
+module mux#(parameter W = 32)(output reg [W-1:0]
+	,input select_in
 	,input [W-1:0] in1
-	,input [W-1:0] in2
-	,output reg [W-1:0] out);
+	,input [W-1:0] in2);
 	
 	always @(*) begin
 		out= 32'h00000000;
