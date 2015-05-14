@@ -17,13 +17,13 @@ module register #(parameter W = 32) (
 	always @(posedge CLK) begin
 		if(reset) begin
 			for(i=0; i<W; i=i+1) begin
-				regs[i] = 0;
+				regs[i] <= 0;
 			end
 		end
 		else if(write_en) begin
 			if(write_reg_data != 0) begin
 				if(write_reg_addr == 0)
-					regs[write_reg_addr] = 0;
+					regs[write_reg_addr] <= 0;
 				else
 					regs[write_reg_addr] <= write_reg_data;
 			end
