@@ -22,7 +22,10 @@ module register #(parameter W = 32) (
 		end
 		else if(write_en) begin
 			if(write_reg_data != 0) begin
-				regs[write_reg_addr] <= write_reg_data;
+				if(write_reg_addr == 0)
+					regs[write_reg_addr] = 0;
+				else
+					regs[write_reg_addr] <= write_reg_data;
 			end
 		end
 	end
