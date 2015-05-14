@@ -51,7 +51,8 @@ processor dut(
 //This will print out a message whenever the serial port is written to
 always @(posedge clock) begin
 	if (reset) begin
-	end else begin
+	end 
+	else begin
 		if (serial_wren) begin
 				$display("[%0d] Serial: %c",$time,serial_out);
 		end

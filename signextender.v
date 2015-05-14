@@ -1,4 +1,5 @@
-module signextender(output reg [31:0] extended_bits
+module signextender(
+	output reg [31:0] extended_bits
 	, input [15:0] input_bits);
   
 	always @(input_bits) begin

@@ -1,4 +1,5 @@
-module mux #(parameter W = 32) (output reg [W-1:0] out
+module mux #(parameter W = 32) (
+	output reg [W-1:0] out
 	,input select_in
 	,input [W-1:0] in1 ,input [W-1:0] in2);
 	

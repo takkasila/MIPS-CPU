@@ -1,6 +1,6 @@
-module program_counter #(parameter W = 32) (output reg [W-1:0] program_address
+module program_counter (output reg [31:0] program_address
 	,input reset, input CLK
-	,input [W-1:0] in_address);
+	,input [31:0] in_address);
 
 	always @(posedge CLK) begin
 		if(reset == 1) begin

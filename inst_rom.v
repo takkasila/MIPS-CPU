@@ -13,13 +13,13 @@
 */
 
 module inst_rom (
-	input	clock,
+	input clock,
 	input reset,
 	input [31:0] addr_in,
 	output [31:0] data_out
 );
 	parameter ADDR_WIDTH=8;
-	parameter INIT_PROGRAM="/home/tk/Desktop/verilog/projVerilog/test/inst_rom.memh";
+	parameter INIT_PROGRAM="/test/inst_rom.memh";
 
 	reg [31:0] rom [0:2**ADDR_WIDTH-1];
 	reg [31:0] out;

@@ -1,11 +1,11 @@
-module register #(parameter W = 32) (
-	output reg [W-1:0] read_reg1
-	, output reg [W-1:0] read_reg2
+module register (
+	output reg [31:0] read_reg1
+	, output reg [31:0] read_reg2
 	, input reset, input CLK, input write_en
 	, input [4:0] read_reg_addr1, input [4:0] read_reg_addr2
-	, input [4:0] write_reg_addr, input [W-1:0] write_reg_data);
+	, input [4:0] write_reg_addr, input [31:0] write_reg_data);
 
-	reg [W-1:0] regs [W-1:0];
+	reg [31:0] regs [31:0];
 	reg i;
 
 	always @(*) begin
@@ -16,7 +16,7 @@ module register #(parameter W = 32) (
 
 	always @(posedge CLK) begin
 		if(reset) begin
-			for(i=0; i<W; i=i+1) begin
+			for(i=0; i<32; i=i+1) begin
 				regs[i] <= 0;
 			end
 		end
