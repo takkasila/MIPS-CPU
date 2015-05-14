@@ -44,10 +44,10 @@ module data_memory(
 	output				serial_wren_out
 );
 
-parameter INIT_PROGRAM0 = "/test/data_ram0.memh";
-parameter INIT_PROGRAM1 = "/test/data_ram1.memh";
-parameter INIT_PROGRAM2 = "/test/data_ram2.memh";
-parameter INIT_PROGRAM3 = "/test/data_ram3.memh";
+parameter INIT_PROGRAM0 = "/home/takkasila/Verilog/MIPS CPU Project/test/data_ram0.memh";
+parameter INIT_PROGRAM1 = "/home/takkasila/Verilog/MIPS CPU Project/test/data_ram1.memh";
+parameter INIT_PROGRAM2 = "/home/takkasila/Verilog/MIPS CPU Project/test/data_ram2.memh";
+parameter INIT_PROGRAM3 = "/home/takkasila/Verilog/MIPS CPU Project/test/data_ram3.memh";
 
 
 	wire	[31:0]	data_readdata_serial;
