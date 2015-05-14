@@ -12,17 +12,19 @@ module controller (
 
 	always @(*) begin
 		case (OPCode_in)
-	        6'b000000: begin //sll,srl,sra,sllv,srlv,srav,jr,jalr,mfhi,mthi,mflo,mtlo,mult,multu,div,divu,add,addu,sub,subu,and,or,xor,nor,slt,sltu
-	            RegDst <= 1'b1; //
-	            RegWrite <= 1'b1;   //
-	            ALUSrc <= 1'b0;     //
-	            MemRead <= 1'b0;    //
-	            MemWrite <= 1'b0;   //
-	            MemtoReg <= 1'b0;   //
-	            Branch <= 1'b0; //
-	            if ( ALUSelect_in == 6'b000000 ) begin
-	              ALUSelect_out <= 6'b100000 ;  //
-	            end else begin
+
+	        6'b000000: begin //sll,srl,sra,sllv,srlv,srav,mfhi,mthi,mflo,mtlo,mult,multu,div,divu,add,addu,sub,subu,and,or,xor,nor,slt,sltu
+	            RegDst <= 1'b1;
+	            RegWrite <= 1'b1;
+	            ALUSrc <= 1'b0;
+	            MemRead <= 1'b0;
+	            MemWrite <= 1'b0;
+	            MemtoReg <= 1'b0;
+	            Branch <= 1'b0;
+	            if (ALUSelect_in == 6'b000000) begin
+	              ALUSelect_out <= 6'b100000;
+	            end
+	            else begin
 	              ALUSelect_out <= ALUSelect_in;
 	            end
 	        end
