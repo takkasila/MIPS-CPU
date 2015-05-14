@@ -60,9 +60,9 @@ module processor(
 
 	wire [4:0] write_reg_addr;
 
-	mux #(5) mux_MemToReg_modl (
+	mux #(5) mux_WriteRegisterSrc_modl (
 		write_reg_addr
-		, MemtoReg
+		, RegDst
 		, instruction[20:16]
 		, instruction[15:11]);
 
@@ -118,5 +118,11 @@ module processor(
 		, serial_out
 		, serial_rden_out
 		, serial_wren_out);
+
+	mux #(32) mux_writeBack_reg_modl(
+		write_reg_data
+		, MemtoReg
+		, ALU_result
+		, read_mem_data);
 
 endmodule
