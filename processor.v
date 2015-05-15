@@ -97,7 +97,7 @@ module processor(
 	alu alu_modl(
 		ALUSelectFunc
 		, read_reg1
-		, read_reg2
+		, ALU_B_in
 		, ALU_result
 		, Branch_out
 		, Jump_out);
@@ -124,5 +124,12 @@ module processor(
 		, MemtoReg
 		, ALU_result
 		, read_mem_data);
+
+	always @(instruction) begin
+		if(instruction == 32'h00000000) begin
+			$finish;
+		end
+	end
+
 
 endmodule

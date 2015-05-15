@@ -5,7 +5,7 @@ module register (
 	, input [4:0] read_reg_addr1, input [4:0] read_reg_addr2
 	, input [4:0] write_reg_addr, input [31:0] write_reg_data);
 
-	reg [31:0] regs [31:0];
+	reg [31:0] regs [0:31];
 	integer i;
 
 	always @(*) begin
