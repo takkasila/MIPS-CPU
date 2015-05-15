@@ -21,14 +21,15 @@ module controller (
 	            MemWrite <= 1'b0;
 	            MemtoReg <= 1'b0;
 	            Branch <= 1'b0;
+	            /*
 	            if (ALUSelect_in == 6'b000000) begin
 	              ALUSelect_out <= 6'b100000;
 	            end
-	            else begin
-	              ALUSelect_out <= ALUSelect_in;
-	            end
+	            else begin*/
+	            ALUSelect_out <= ALUSelect_in;
+	            //end
 	        end
-	        6'b000100: begin //beq            
+	        6'b000100: begin //beq
 	          	RegDst <= 1'bx;
 	            RegWrite <= 1'b0;
 	            ALUSrc <= 1'b0;
@@ -37,7 +38,7 @@ module controller (
 	            MemtoReg <= 1'bx;
 	            Branch <= 1'b0;
 	        end
-	        6'b000101: begin //bne            
+	        6'b000101: begin //bne
 	          	RegDst <= 1'bx;
 	            RegWrite <= 1'b0;
 	            ALUSrc <= 1'b0;
@@ -46,7 +47,7 @@ module controller (
 	            MemtoReg <= 1'bx;
 	            Branch <= 1'b0;
 	        end
-	        6'b000110: begin //blez            
+	        6'b000110: begin //blez
 	          	RegDst <= 1'bx;
 	            RegWrite <= 1'b0;
 	            ALUSrc <= 1'b0;
@@ -55,7 +56,7 @@ module controller (
 	            MemtoReg <= 1'bx;
 	            Branch <= 1'b0;
 	        end
-	        6'b000111: begin //bgtz            
+	        6'b000111: begin //bgtz
 	          	RegDst <= 1'bx;
 	            RegWrite <= 1'b0;
 	            ALUSrc <= 1'b0;
@@ -64,7 +65,7 @@ module controller (
 	            MemtoReg <= 1'bx;
 	            Branch <= 1'b0;
 	        end
-	        6'b001000: begin //addi            
+	        6'b001000: begin //addi
 	          	RegDst <= 1'b0;
 	            RegWrite <= 1'b1;
 	            ALUSrc <= 1'b1;
@@ -74,7 +75,7 @@ module controller (
 	            Branch <= 1'b0;
 	            ALUSelect_out <= 6'b100000;
 	        end
-	        6'b001001: begin //addiu            
+	        6'b001001: begin //addiu
 	          	RegDst <= 1'b0;
 	            RegWrite <= 1'b1;
 	            ALUSrc <= 1'b1;
@@ -82,9 +83,9 @@ module controller (
 	            MemWrite <= 1'b0;
 	            MemtoReg <= 1'b0;
 	            Branch <= 1'b0;
-	            ALUSelect_out <= 6'b100000;            
+	            ALUSelect_out <= 6'b100000;
 	        end
-	        6'b001010: begin //slti            
+	        6'b001010: begin //slti
 	          	RegDst <= 1'b0;
 	            RegWrite <= 1'b1;
 	            ALUSrc <= 1'b1;
@@ -94,7 +95,7 @@ module controller (
 	            Branch <= 1'b0;
 	            ALUSelect_out <= 6'b101000;
 	        end
-	        6'b001011: begin //sltiu            
+	        6'b001011: begin //sltiu
 	          	RegDst <= 1'b0;
 	            RegWrite <= 1'b1;
 	            ALUSrc <= 1'b1;
@@ -104,7 +105,7 @@ module controller (
 	            Branch <= 1'b0;
 	            ALUSelect_out <= 6'b101001;
 	        end
-	        6'b001100: begin //andi            
+	        6'b001100: begin //andi
 	          	RegDst <= 1'b0;
 	            RegWrite <= 1'b1;
 	            ALUSrc <= 1'b1;
@@ -114,7 +115,7 @@ module controller (
 	            Branch <= 1'b0;
 	            ALUSelect_out <= 6'b100100;
 	        end
-	        6'b001101: begin //ori            
+	        6'b001101: begin //ori
 	          	RegDst <= 1'b0;
 	            RegWrite <= 1'b1;
 	            ALUSrc <= 1'b1;
@@ -124,7 +125,7 @@ module controller (
 	            Branch <= 1'b0;
 	            ALUSelect_out <= 6'b100101;
 	        end
-	        6'b001110: begin //xori            
+	        6'b001110: begin //xori
 	          	RegDst <= 1'b0;
 	            RegWrite <= 1'b1;
 	            ALUSrc <= 1'b1;
@@ -132,9 +133,9 @@ module controller (
 	            MemWrite <= 1'b0;
 	            MemtoReg <= 1'b0;
 	            Branch <= 1'b0;
-	            ALUSelect_out <= 6'b100000;
+	            ALUSelect_out <= 6'b100110;
 	        end
-	        6'b011001: begin //lhi            
+	        6'b011001: begin //lhi
 	          	RegDst <= 1'b0;
 	            RegWrite <= 1'b1;
 	            ALUSrc <= 1'b1;
@@ -144,7 +145,7 @@ module controller (
 	            Branch <= 1'b0;
 	            ALUSelect_out <= 6'b100000;
 	        end
-	        6'b100000: begin //lb            
+	        6'b100000: begin //lb
 	          	RegDst <= 1'b0;
 	            RegWrite <= 1'b1;
 	            ALUSrc <= 1'b0;
@@ -154,7 +155,7 @@ module controller (
 	            Branch <= 1'b0;
 	            ALUSelect_out <= 6'b100000;
 	        end
-	        6'b100001: begin //lh            
+	        6'b100001: begin //lh
 	          	RegDst <= 1'b0;
 	            RegWrite <= 1'b1;
 	            ALUSrc <= 1'b0;
@@ -164,7 +165,7 @@ module controller (
 	            Branch <= 1'b0;
 	            ALUSelect_out <= 6'b100000;
 	        end
-	        6'b100011: begin //lw            
+	        6'b100011: begin //lw
 	          	RegDst <= 1'b0;
 	            RegWrite <= 1'b1;
 	            ALUSrc <= 1'b1;
@@ -174,7 +175,7 @@ module controller (
 	            Branch <= 1'b0;
 	            ALUSelect_out <= 6'b100000;
 	        end
-	        6'b100100: begin //lbu            
+	        6'b100100: begin //lbu
 	          	RegDst <= 1'b0;
 	            RegWrite <= 1'b1;
 	            ALUSrc <= 1'b0;
@@ -184,7 +185,7 @@ module controller (
 	            Branch <= 1'b0;
 	            ALUSelect_out <= 6'b100000;
 	        end
-	        6'b100101: begin //lhu            
+	        6'b100101: begin //lhu
 	          	RegDst <= 1'b0;
 	            RegWrite <= 1'b1;
 	            ALUSrc <= 1'b0;
@@ -194,7 +195,7 @@ module controller (
 	            Branch <= 1'b0;
 	            ALUSelect_out <= 6'b100000;
 	        end
-	        6'b101000: begin //sb            
+	        6'b101000: begin //sb
 	          	RegDst <= 1'bx;
 	            RegWrite <= 1'b0;
 	            ALUSrc <= 1'b1;
@@ -204,7 +205,7 @@ module controller (
 	            Branch <= 1'b0;
 	            ALUSelect_out <= 6'b100000;
 	        end
-	        6'b101001: begin //sh            
+	        6'b101001: begin //sh
 	          	RegDst <= 1'bx;
 	            RegWrite <= 1'b0;
 	            ALUSrc <= 1'b1;
@@ -214,7 +215,7 @@ module controller (
 	            Branch <= 1'b0;
 	            ALUSelect_out <= 6'b100000;
 	        end
-	        6'b101011: begin //sw            
+	        6'b101011: begin //sw
 	          	RegDst <= 1'bx;
 	            RegWrite <= 1'b0;
 	            ALUSrc <= 1'b1;

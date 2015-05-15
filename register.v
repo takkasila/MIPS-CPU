@@ -6,7 +6,7 @@ module register (
 	, input [4:0] write_reg_addr, input [31:0] write_reg_data);
 
 	reg [31:0] regs [31:0];
-	reg [4:0] i;
+	integer i;
 
 	always @(*) begin
 		read_reg1 = regs[read_reg_addr1];
@@ -22,9 +22,10 @@ module register (
 		end
 		else if(write_en) begin
 			if(write_reg_data != 0) begin
+			/*
 				if(write_reg_addr == 0)
 					regs[write_reg_addr] <= 0;
-				else
+				else*/
 					regs[write_reg_addr] <= write_reg_data;
 			end
 		end
